@@ -10,24 +10,8 @@ setInterval(function(){
     if(counter > 0){
         var blockLastTop = parseInt(window.getComputedStyle(blockLast).getPropertyValue("top"));
         var holeLastTop = parseInt(window.getComputedStyle(holeLast).getPropertyValue("top"));
-        if(blockLastTop < 400){
-            var block = document.createElement("div");
-            var hole = document.createElement("div");
-            block.setAttribute("class", "block");
-            block.setAttribute("id", "block".concat(counter));
-            hole.setAttribute("class", "hole");
-            hole.setAttribute("id", "hole".concat(counter));
-            block.style.top = blockLastTop + 100 + "px";
-            hole.style.top = holeLastTop + 100 + "px";
-            var random = Math.floor(Math.random() * 380);
-            hole.style.left = random + "px";
-            game.appendChild(hole); 
-            game.appendChild(block);
-            currentBlocks.push(counter);
-            counter++;
-        }
     }
-    if(counter==0){
+    if(blockLastTop < 400||counter==0){
         var block = document.createElement("div");
         var hole = document.createElement("div");
         block.setAttribute("class", "block");
@@ -54,7 +38,7 @@ setInterval(function(){
     let hole2 = document.getElementById("hole".concat(hole1));
     var blockTop = parseInt(window.getComputedStyle(block2).getPropertyValue("top"));
     var holeLeft = parseInt(window.getComputedStyle(hole2).getPropertyValue("left"));
-    if((holeLeft <= characterLeft && characterLeft <= holeLeft + 20) || (blockTop != 20)){
+    if((holeLeft <= characterLeft && characterLeft <= holeLeft + 20) || (blockTop > 20)){
         var newtop = blockTop - 5;
         block2.style.top = newtop + "px";
         hole2.style.top = newtop + "px";
@@ -63,14 +47,14 @@ setInterval(function(){
             let ihole = document.getElementById("hole".concat(i));
             var blockTopI = parseInt(window.getComputedStyle(iblock).getPropertyValue("top"));
             var holeLeftI = parseInt(window.getComputedStyle(ihole).getPropertyValue("left"));
-            var newtop = blockTop - 5;
+            var newtop = blockTopI - 5;
             iblock.style.top = newtop + "px";
             ihole.style.top = newtop + "px";
-            if(blockTopI < 0){
+            if(blockTopI < -20){
             console.log(currentBlocks);
                 currentBlocks.shift();
             console.log(currentBlocks);
             }
         });
     }
-}, 10);
+}, 1);
