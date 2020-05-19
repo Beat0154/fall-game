@@ -43,7 +43,11 @@ var updateBlocks = setInterval(function(){
         var blockTopI = parseFloat(window.getComputedStyle(iblock).getPropertyValue("top"));
         var holeLeftI = parseInt(window.getComputedStyle(ihole).getPropertyValue("left"));
         var holeTopI = parseInt(window.getComputedStyle(ihole).getPropertyValue("top"));
-        var newtop = blockTopI - 0.5;
+        if(window.innerWidth < 500){
+            var newtop = blockTopI - 2;
+        }else{
+            var newtop = blockTopI - 0.5;
+        }
         iblock.style.top = newtop + "px";
         ihole.style.top = newtop + "px";
         if(blockTopI < -20){
@@ -62,9 +66,17 @@ var updateBlocks = setInterval(function(){
     }
     if(drop == 0){
         if(characterTop < 476){
-            character.style.top = characterTop + 2 + "px";
+            if(window.innerWidth < 500){
+                character.style.top = characterTop + 8 + "px";
+            }else{
+                character.style.top = characterTop + 2 + "px";
+            }
         }
     } else{
-        character.style.top = characterTop - 0.5 + "px";
+        if(window.innerWidth < 500){
+            character.style.top = characterTop - 2 + "px";
+        }else{
+            character.style.top = characterTop - 0.5 + "px";
+        }
     }
 }, 1);
