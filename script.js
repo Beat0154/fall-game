@@ -27,10 +27,11 @@ var updateBlocks = setInterval(function(){
         block.style.top = blockLastTop + 100 + "px";
         hole.style.top = holeLastTop + 100 + "px";
         if(window.innerWidth < 400){
-            var random = (Math.floor(Math.random() * window.innerWidth - 80)) + 40;
+            var random = Math.floor(Math.random() * window.innerWidth - 40);
         }else{
-            var random = (Math.floor(Math.random() * 320)) + 40;
+            var random = Math.floor(Math.random() * 320);
         }
+        random = Math.abs(random);
         hole.style.left = random + "px";
         game.appendChild(hole); 
         game.appendChild(block);
