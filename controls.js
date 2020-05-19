@@ -12,7 +12,11 @@ function mouseupLeft(event) {
 function whilemousedownLeft() {
    var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
     if(left > 0){
-        var newleft = left - 2;
+        if(window.innerWidth < 550){
+            var newleft = left - 8;
+        }else{
+            var newleft = left - 2;
+        }
         character.style.left = newleft + "px";
     }
 }
@@ -33,7 +37,11 @@ function mouseupRight(event) {
 function whilemousedownRight() {
    var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
     if(left < 380){
-        var newleft = left + 2;
+        if(window.innerWidth < 550){
+            var newleft = left + 8;
+        }else{
+            var newleft = left + 2;
+        }
         character.style.left = newleft + "px";
     }
 }
