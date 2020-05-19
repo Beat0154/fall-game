@@ -6,8 +6,6 @@ if(window.innerWidth < 400){
 }
 document.documentElement.style.setProperty('--width', width + "px");
 var character = document.getElementById("character");
-var block = document.getElementById("block");
-var hole = document.getElementById("hole");
 var currentBlocks = [];
 var counter = 0;
 var updateBlocks = setInterval(function(){
@@ -27,11 +25,10 @@ var updateBlocks = setInterval(function(){
         block.style.top = blockLastTop + 100 + "px";
         hole.style.top = holeLastTop + 100 + "px";
         if(window.innerWidth < 400){
-            var random = Math.floor(Math.random() * window.innerWidth - 40);
+            var random = Math.floor(Math.random() * (window.innerWidth - 40));
         }else{
             var random = Math.floor(Math.random() * 320);
         }
-        random = Math.abs(random);
         hole.style.left = random + "px";
         game.appendChild(hole); 
         game.appendChild(block);
@@ -55,7 +52,7 @@ var updateBlocks = setInterval(function(){
         var holeLeftI = parseInt(window.getComputedStyle(ihole).getPropertyValue("left"));
         var holeTopI = parseInt(window.getComputedStyle(ihole).getPropertyValue("top"));
         if(window.innerWidth < 400){
-            var newtop = blockTopI - 1.5;
+            var newtop = blockTopI - 1;
         }else{
             var newtop = blockTopI - 0.5;
         }
@@ -76,7 +73,7 @@ var updateBlocks = setInterval(function(){
         }
     }
     if(drop == 0){
-        if(characterTop < 476){
+        if(characterTop < 480){
             if(window.innerWidth < 400){
                 character.style.top = characterTop + 5 + "px";
             }else{
@@ -85,7 +82,7 @@ var updateBlocks = setInterval(function(){
         }
     } else{
         if(window.innerWidth < 400){
-            character.style.top = characterTop - 1.5  + "px";
+            character.style.top = characterTop - 1  + "px";
         }else{
             character.style.top = characterTop - 0.5 + "px";
         }
