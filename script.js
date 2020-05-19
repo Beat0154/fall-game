@@ -67,7 +67,7 @@ var updateBlocks = setInterval(function(){
     if(drop == 0){
         if(characterTop < 476){
             if(window.innerWidth < 550){
-                character.style.top = characterTop + 8 + "px";
+                character.style.top = characterTop + 5 + "px";
             }else{
                 character.style.top = characterTop + 2 + "px";
             }
