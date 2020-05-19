@@ -1,6 +1,10 @@
+:root{
+    --width: 400px;
+}
 *{
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
     user-select: none;
     -moz-user-select: none;
     -khtml-user-select: none;
@@ -8,7 +12,7 @@
     -o-user-select: none;
 }
 #game{
-    width: 400px;
+    width: var(--width);
     height: 500px;
     border: 1px solid black;
     margin: auto;
@@ -24,7 +28,7 @@
     z-index: 100;
 }
 .block{
-    width: 400px;
+    width: var(--width);
     height: 20px;
     background-color: black;
     position: relative;
@@ -41,7 +45,7 @@
     z-index: 1;
 }
 #left, #right{
-    width:200px;
+    width:50%;
     position: absolute;
     height: 500px;
 }

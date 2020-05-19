@@ -1,4 +1,10 @@
 var game = document.getElementById("game");
+if(window.innerWidth < 400){
+    var width = window.innerWidth-2;
+}else{
+    var width = 400;
+}
+document.documentElement.style.setProperty('--width', width + "px");
 var character = document.getElementById("character");
 var block = document.getElementById("block");
 var hole = document.getElementById("hole");
@@ -20,7 +26,11 @@ var updateBlocks = setInterval(function(){
         hole.setAttribute("id", "hole".concat(counter));
         block.style.top = blockLastTop + 100 + "px";
         hole.style.top = holeLastTop + 100 + "px";
-        var random = Math.floor(Math.random() * 360);
+        if(window.innerWidth < 400){
+            var random = Math.floor(Math.random() * window.innerWidth - 40);
+        }else{
+            var random = Math.floor(Math.random() * 360);
+        }
         hole.style.left = random + "px";
         game.appendChild(hole); 
         game.appendChild(block);
@@ -43,7 +53,7 @@ var updateBlocks = setInterval(function(){
         var blockTopI = parseFloat(window.getComputedStyle(iblock).getPropertyValue("top"));
         var holeLeftI = parseInt(window.getComputedStyle(ihole).getPropertyValue("left"));
         var holeTopI = parseInt(window.getComputedStyle(ihole).getPropertyValue("top"));
-        if(window.innerWidth < 550){
+        if(window.innerWidth < 400){
             var newtop = blockTopI - 2;
         }else{
             var newtop = blockTopI - 0.5;
@@ -66,14 +76,14 @@ var updateBlocks = setInterval(function(){
     }
     if(drop == 0){
         if(characterTop < 476){
-            if(window.innerWidth < 550){
+            if(window.innerWidth < 400){
                 character.style.top = characterTop + 5 + "px";
             }else{
                 character.style.top = characterTop + 2 + "px";
             }
         }
     } else{
-        if(window.innerWidth < 550){
+        if(window.innerWidth < 400){
             character.style.top = characterTop - 2  + "px";
         }else{
             character.style.top = characterTop - 0.5 + "px";

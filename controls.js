@@ -12,7 +12,7 @@ function mouseupLeft(event) {
 function whilemousedownLeft() {
    var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
     if(left > 0){
-        if(window.innerWidth < 550){
+        if(window.innerWidth < 400){
             var newleft = left - 8;
         }else{
             var newleft = left - 2;
@@ -36,8 +36,13 @@ function mouseupRight(event) {
 }
 function whilemousedownRight() {
    var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
-    if(left < 380){
-        if(window.innerWidth < 550){
+    if(window.innerWidth < 400){
+        var num = window.innerWidth - 20;
+    }else{
+        var num = 380;
+    }
+    if(left < num){
+        if(window.innerWidth < 400){
             var newleft = left + 8;
         }else{
             var newleft = left + 2;
