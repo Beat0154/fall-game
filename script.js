@@ -61,8 +61,8 @@ var updateBlocks = setInterval(function(){
         }
     }
     if(drop == 0){
-        if(characterTopi < 476){
-            character.style.top = characterTop + 4 + "px";
+        if(characterTop < 476){
+            character.style.top = characterTop + 2 + "px";
         }
     } else{
         character.style.top = characterTop - 0.5 + "px";
