@@ -54,7 +54,7 @@ var updateBlocks = setInterval(function(){
         var holeLeftI = parseInt(window.getComputedStyle(ihole).getPropertyValue("left"));
         var holeTopI = parseInt(window.getComputedStyle(ihole).getPropertyValue("top"));
         if(window.innerWidth < 400){
-            var newtop = blockTopI - 1;
+            var newtop = blockTopI - 1.5;
         }else{
             var newtop = blockTopI - 0.5;
         }
