@@ -13,7 +13,7 @@ function whilemousedownLeft() {
    var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
     if(left > 0){
         if(window.innerWidth < 400){
-            var newleft = left - 8;
+            var newleft = left - 5;
         }else{
             var newleft = left - 2;
         }
@@ -43,7 +43,7 @@ function whilemousedownRight() {
     }
     if(left < num){
         if(window.innerWidth < 400){
-            var newleft = left + 8;
+            var newleft = left + 5;
         }else{
             var newleft = left + 2;
         }

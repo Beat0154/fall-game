@@ -27,9 +27,9 @@ var updateBlocks = setInterval(function(){
         block.style.top = blockLastTop + 100 + "px";
         hole.style.top = holeLastTop + 100 + "px";
         if(window.innerWidth < 400){
-            var random = Math.floor(Math.random() * window.innerWidth - 40);
+            var random = (Math.floor(Math.random() * window.innerWidth - 80)) + 40;
         }else{
-            var random = Math.floor(Math.random() * 360);
+            var random = (Math.floor(Math.random() * 320)) + 40;
         }
         hole.style.left = random + "px";
         game.appendChild(hole); 
@@ -54,7 +54,7 @@ var updateBlocks = setInterval(function(){
         var holeLeftI = parseInt(window.getComputedStyle(ihole).getPropertyValue("left"));
         var holeTopI = parseInt(window.getComputedStyle(ihole).getPropertyValue("top"));
         if(window.innerWidth < 400){
-            var newtop = blockTopI - 2;
+            var newtop = blockTopI - 1;
         }else{
             var newtop = blockTopI - 0.5;
         }
