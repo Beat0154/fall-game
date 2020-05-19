@@ -13,6 +13,7 @@
     height: 20px;
     background-color: red;
     border-radius: 50%;
+    top: 440px;
     left: 110px;
     position: relative;
     z-index: 100;
