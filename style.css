@@ -1,34 +1,26 @@
-:root{
-    --width: 400px;
-}
 *{
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
-    user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -o-user-select: none;
 }
 #game{
-    width: var(--width);
+    width: 400px;
     height: 500px;
     border: 1px solid black;
     margin: auto;
+    overflow: hidden;
 }
 #character{
     width: 20px;
     height: 20px;
     background-color: red;
     border-radius: 50%;
-    top: 440px;
-    left: 110px;
     position: relative;
-    z-index: 100;
+    top: 400px;
+    left: 190px;
+    z-index: 1000000;
 }
 .block{
-    width: var(--width);
+    width: 400px;
     height: 20px;
     background-color: black;
     position: relative;
@@ -38,17 +30,8 @@
 .hole{
     width: 40px;
     height: 20px;
+    background-color: white;
+    position: relative;
     top: 100px;
     margin-top: -20px;
-    position: relative;
-    background-color: white;
-    z-index: 1;
-}
-#left, #right{
-    width:50%;
-    position: absolute;
-    height: 500px;
-}
-#right{
-    left: 50%;
 }
